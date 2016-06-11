@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>p5</title>
+	<script>
+		var arrTelefonos = [];
+		function Telefono (numero, marca, color) {
+			this.numero = numero || '';
+			this.marca = marca || '';
+			this.color = color || '';
+			this.llamadas = 0;
+			this.marcar = function () {
+				this.llamadas++;
+			}
+		}
+
+		function arrTelMarca(arrTel, marca) {
+			var arrMarca = [];
+			for (var i=0; i<arrTel.length; i++) {
+				if (arrTel[i].marca == marca) {
+					arrMarca.push(arrTel[i]);
+				}
+			}
+			return arrMarca;
+		}
+
+		var tel1 = new Telefono('996920538', 'sony', 'rojo');
+		var tel2 = new Telefono('996920538', 'apple', 'azul');
+		var tel3 = new Telefono('996920538', 'sony', 'verde');
+
+		arrTelefonos.push(tel1);
+		arrTelefonos.push(tel2);
+		arrTelefonos.push(tel3);
+		arrTelMarca(arrTelefonos);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

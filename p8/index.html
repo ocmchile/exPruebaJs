@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>p8</title>
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<input type="text" name="dato" id="dato" value="" placeholder="Ingrese un dato o presione agregar"><input type="text" name="color" id="color" placeholder="Ingrese color" value=""><button id="agregar">Agregar</button>
+	<br>
+	<button id="eliminar">Eliminar el primero de la lista</button>
+	<script>
+		$("#agregar").click(function(event) {
+			var dato = $("#dato").val();
+			var color = $("#color").val();
+			if (dato) {
+				$("ul li").last().after("<li>" + dato + "</li>");
+				$("#dato").val('');
+			}
+			else {
+				var lastVal = $("ul li").last().text();
+				if (!isNaN(lastVal)) {
+					$("ul li").last().after("<li>" + (parseInt(lastVal) + 1) + "</li>");
+				}
+				else {
+					alert("el ultimo elemento no es un numero");
+				}
+			}
+
+			if (color) {
+				$("ul li").last().css("color", color);
+				var color = $("#color").val('');
+			}
+		});
+		$("#eliminar").click(function(event) {
+			$("ul li").first().remove();
+		});
+	</script>
+</body>
+</html>

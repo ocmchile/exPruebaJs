@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>p9</title>
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+</head>
+<body>
+	<form action="http://www.googe.cl" name="form1" id="form1">
+	    <input type="text" name="nombre" id="nombre" value="" placeholder="Ingrese nombre">
+	    <br>
+	    <input type="text" name="email" id="email" placeholder="Ingrese email" value="">
+	    <br>
+	    <select name="sexo" id="sexo">
+	        <option value="masculino">Masculino</option>
+	        <option value="femenino">Femenino</option>
+	    </select>
+	    <br>
+	    <button id="enviar">Enviar</button>
+	</form>
+
+	<script>
+		var arrPersonas = [];
+		function Persona(nombre, email, sexo) {
+			this.nombre = nombre || '';
+			this.email = email || '';
+			this.sexo = sexo || '';
+			this.agregar = function() {
+
+			}
+		}
+		$("#enviar").click(function(event) {
+			event.preventDefault();
+            var email = $("#email").val();
+            var nombre = $("#nombre").val();
+            var sexo = $("#sexo").val();
+            if (email) {
+            	// $("#form1").submit();
+            	var per = new Persona(nombre, email, sexo);
+            	arrPersonas.push(per);
+            	console.log(arrPersonas);
+            }
+            else {
+            	alert("Email esta vacio");
+            }
+        });
+	</script>
+</body>
+</html>

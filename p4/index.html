@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>p4</title>
+	<script>
+		var i, j, n;
+		n = parseInt(prompt('ingrese cantidad de elemento de matriz cuadrada: '));
+		if (n > 0) {
+			for (i=0; i<n; i++) {
+				for (j=0; j<n; j++) {
+					if (i == 0 || j == 0 || i == (n - 1) || j == (n - 1)) {
+						document.write('*');
+					}
+					else {
+						document.write('&nbsp;&nbsp;');
+					}
+				}
+				document.write("<br>");
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
